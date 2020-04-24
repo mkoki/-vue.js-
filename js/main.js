@@ -7,7 +7,8 @@
       weeks: ['日', '月', '火', '水', '木', '金', '土'],
       calData: {year: 0,
                 month: 0
-      }
+      },
+      showContent: false
     },
     created: function() {
       const date = new Date();
@@ -34,6 +35,20 @@
               this.calData.month++;
           }
         };
+      },
+
+      openModal() {
+        console.log('ok')
+        this.showContent = true
+      },
+
+      closeModal() {
+        this.showContent = false
+      },
+
+      insertText: function(event) {
+        this.closeModal();
+        console.log(event);
       }
   },
   computed: {

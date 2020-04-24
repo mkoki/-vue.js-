@@ -17,15 +17,23 @@
     <table id="calendar">
       <thead>
         <tr>
-          <td v-repeat='week: weeks'>{{week}}</td>
+          <td v-repeat='week in weeks'>{{week}}</td>
         </tr>
       </thead>
       <tbody>
         <tr v-repeat='week: calendar'>
-          <td v-repeat='day: week'>{{day.day}}</td>
+          <td v-repeat='day in week' v-on="click: openModal" >{{day.day}}</td>
         </tr>
       </tbody>
     </table>
+    <div id="overlay" v-show='showContent'>
+      <div id="modal" v-show='showContent'>
+        <form @submit='insertText'>
+          <input type="text" v-model="newItem">
+          <input type="submit" value="Add">
+        </form>
+      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.8/vue.min.js"></script>
   <script src="js/main.js"></script>
