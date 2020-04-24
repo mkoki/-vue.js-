@@ -5,8 +5,9 @@
     el: '#app',
     data: {
       weeks: ['日', '月', '火', '水', '木', '金', '土'],
-      calData: {year: 0,
-                month: 0
+      calData: {
+        year: 0,
+        month: 0
       },
       showContent: false
     },
@@ -81,7 +82,6 @@
         }
         calendar.push(week);
       }
-      console.log(calendar);
       return calendar;
      }
     }

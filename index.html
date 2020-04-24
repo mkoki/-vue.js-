@@ -29,8 +29,9 @@
     <div id="overlay" v-show='showContent'>
       <div id="modal" v-show='showContent'>
         <form @submit='insertText'>
-          <input type="text" v-model="newItem">
+          <input style='width: 50%; height:30px;' type="textarea" v-model="newItem">
           <input type="submit" value="Add">
+          <span style='float:right; cursor: pointer;' v-on='click: closeModal'>閉じる</span>
         </form>
       </div>
     </div>
