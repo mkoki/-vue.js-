@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Vueでカレンダー作るぞ！</title>
+</head>
+<body>
+  <div id="app">
+    <div class="top">
+      <button id="prev" type="button" class="btn-square" v-on='click: moveMonth'><</button>
+      <h1 id="title">{{calData.year}} - {{calData.month}}月</h1>
+      <button id="next" type="button" class="btn-square" v-on='click: moveMonth'>></button>
+    </div>
+
+    <table id="calendar">
+      <thead>
+        <tr>
+          <td v-repeat='week: weeks'>{{week}}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-repeat='week: calendar'>
+          <td v-repeat='day: week'>{{day.day}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.8/vue.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

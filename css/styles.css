@@ -1,0 +1,32 @@
+body{
+  margin-right: auto;
+  margin-left : auto;
+  width:700px;
+}
+
+h1 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+td:first-child {
+  color: red;
+  background-color: lightpink;
+}
+
+td:last-child {
+  color: royalblue;
+  background-color: lightskyblue;
+}
