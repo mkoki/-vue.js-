@@ -40,7 +40,7 @@
 
     calendar: function () {
       // 月初めの曜日
-      var firstDay = new Date(this.calData.year, this.calData.month - 1, 1).getDay();
+      var firstyoubi = new Date(this.calData.year, this.calData.month - 1, 1).getDay();
       // 月終わりの日にち
       var lastDate = new Date(this.calData.year, this.calData.month, 0).getDate();
       // 日にちのカウント
@@ -54,11 +54,8 @@
         if (lastDate < dayCount) {break;}
 
         for (var d = 0; d < 7; d++) {
-            if (w == 0 && d < firstDay) {
+            if (w == 0 && d < firstyoubi) {
                 week[d] = {day: ''};
-            } else if (w == 6 && lastDate < dayCount) {
-                week[d] = {day: ''};
-                dayCount++;
             } else if (lastDate < dayCount) {
                 week[d] = {day: ''};
                 dayCount++;
@@ -69,6 +66,7 @@
         }
         calendar.push(week);
       }
+      console.log(calendar);
       return calendar;
      }
     }
